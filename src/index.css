@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+}
+
+.App {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  color: #43a047;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color: #43a047;
+}
+
+/* Navbar */
+a {
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.navbar {
+  background: #43a047;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+/* gallery */
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.grid-columns-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.grid-columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery .photo {
+  cursor: pointer;
+  padding: 10px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: left;
+  text-shadow: 0px 0px 15px black;
+  transition: all 0.2s;
+}
+
+.gallery .photo:hover {
+  box-shadow: 0px 0px 7px 1px black;
+}
+
+.gallery .photo span {
+  align-self: flex-end;
+}
+
+.p-3 {
+  padding: 30px;
+}
+
+.description {
+  padding-bottom: 0.5rem;
+}
