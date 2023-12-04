@@ -8,10 +8,19 @@ const PhotoProvider = ({ children }) => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch(PHOTO_URL);
-      const data = await res.json();
-      console.log(data);
-      setImagenes(data.photos);
+      try {
+        const res = await fetch(PHOTO_URL);
+
+        if (!res.ok) {
+          throw new Error(`Error: ${res.status}`);
+        }
+
+        const data = await res.json();
+        console.log(data);
+        setImagenes(data.photos);
+      } catch (error) {
+        console.error("Error:", error.message);
+      }
     };
 
     getData();
@@ -21,6 +30,7 @@ const PhotoProvider = ({ children }) => {
     imagenes,
     setImagenes,
   };
+
   return (
     <PhotoContext.Provider value={value}>{children}</PhotoContext.Provider>
   );
